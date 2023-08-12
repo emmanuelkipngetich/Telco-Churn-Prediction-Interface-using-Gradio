@@ -97,3 +97,4 @@ gr.Interface(inputs=[SeniorCitizen, Tenure, MonthlyCharges, TotalCharges,
              outputs=gr.Label("Awaiting Submission...."),
              fn=predict_churn,
              title="App to predict Customer Churn").launch(inbrowser=True, show_error=True, share=True)
+ 
