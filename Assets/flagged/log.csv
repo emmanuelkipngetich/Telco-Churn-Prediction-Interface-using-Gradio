@@ -1,0 +1,5 @@
+Tenure,Internet Service,Contract,Monthly Charges,Total Charges,Payment Method,Online Security,Online Backup,Device Protection,Tech Support,Streaming TV,Streaming Movies,output,flag,username,timestamp
+4738,DSL,Month-to-month,38892,3903,Bank Transfer (Automatic),Yes,No,Yes,Yes,No,No,C:\Users\USER\GitHub\Telco Churn Gradio App\Telco_Churn_Gradio_App\Assets\flagged\output\tmpuzkzq_q_.json,,,2023-08-12 13:04:28.389492
+49393,Fiber Optic,One year,39023,39032,Electronic Check,No,No,,No,No Internet Service,No Internet Service,C:\Users\USER\GitHub\Telco Churn Gradio App\Telco_Churn_Gradio_App\Assets\flagged\output\tmpums_bslm.json,,,2023-08-12 13:18:54.761315
+1,8399,393,4893,Male,Yes,Yes,Yes,Yes,Fiber optic,No,No,No,No,No,No,One year,No,Credit card (automatic),C:\Users\USER\GitHub\Telco Churn Gradio App\Telco_Churn_Gradio_App\Assets\flagged\output\tmpwwosziqc.json,,,2023-08-12 17:41:13.896803
+1,8399,393,4893,Male,Yes,Yes,Yes,Yes,Fiber optic,No,No,No,No,No,No,One year,No,Credit card (automatic),C:\Users\USER\GitHub\Telco Churn Gradio App\Telco_Churn_Gradio_App\Assets\flagged\output\tmpi_gst1qf.json,,,2023-08-12 17:41:46.720647
