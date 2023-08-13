@@ -17,13 +17,13 @@ expected_inputs = ['SeniorCitizen', 'tenure', 'MonthlyCharges', 'TotalCharges',
 def load_components_func(fp):
     # To load the machine learning components saved to re-use in the app
     with open(fp, "rb") as f:
-        obj = pickle.load(f)
-    return obj
+        object = pickle.load(f)
+    return object
 
 
 # Loading the machine learning components
 DIRPATH = os.path.dirname(os.path.realpath(__file__))
-ml_core_fp = os.path.join(DIRPATH, "ML_Model.pkl")
+ml_core_fp = os.path.join(DIRPATH,"ML_Model.pkl")
 ml_components_dict = load_components_func(fp=ml_core_fp)
 
 # Unpacking my components
@@ -53,14 +53,14 @@ def predict_churn(*args, scaler=scaler, model=model, imputer=imputer, encoder=en
     imputed_df = imputer.transform(encoded_df)
 
     # Scaling
-   # columns_to_scale = ['tenure', 'MonthlyCharges', 'TotalCharges','Contract_One year',
-       #                 'Contract_Two year','Dependents_Yes','DeviceProtection_Yes','InternetService_Fiber optic']
-    #scaled_df = imputed_df.copy()
+   
     scaled_df = scaler.transform(encoded_df)
 
     # Prediction
     model_output = model.predict_proba(scaled_df)
-    prob_Churn = float(model_output[0][0])
+    #Probability of Churn(Positive class)
+    prob_Churn = float(model_output[0][1]) 
+    #Probability of staying(Negative Class)
     prob_Stay = 1 - prob_Churn
     return {"Prediction Churn": prob_Churn,
             "Prediction Not Churn": prob_Stay}
@@ -96,5 +96,5 @@ gr.Interface(inputs=[SeniorCitizen, Tenure, MonthlyCharges, TotalCharges,
                      PaperlessBilling, PaymentMethod],
              outputs=gr.Label("Awaiting Submission...."),
              fn=predict_churn,
-             title="App to predict Customer Churn").launch(inbrowser=True, show_error=True, share=True)
+             title="Gradio App to predict Customer Churn").launch(inbrowser=True, show_error=True, share=True)
  
