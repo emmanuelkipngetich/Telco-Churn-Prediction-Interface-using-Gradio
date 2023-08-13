@@ -2,3 +2,14 @@
  venv\Scripts\activate; #To activate the environment
  python -m pip install -q --upgrade pip;#To upgrade the pip 
  python -m pip install -qr requirements.txt #To install the requirements
+
+ # To change the execution policy to allow script execution for the current session
+ Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+
+ # To execute
+ "c:/Users/USER/GitHub/Telco Churn Gradio App/Telco_Churn_Gradio_App/.venv/Scripts/Activate.ps1"
+
+ # Command to move back a folder
+ cd ..
+ # To run the app
+ python Assets/app.py
