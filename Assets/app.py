@@ -23,7 +23,7 @@ def load_components_func(fp):
 
 # Loading the machine learning components
 DIRPATH = os.path.dirname(os.path.realpath(__file__))
-ml_core_fp = os.path.join(DIRPATH,"ML_Model.pkl")
+ml_core_fp = os.path.join(DIRPATH, "ML_Model.pkl")
 ml_components_dict = load_components_func(fp=ml_core_fp)
 
 # Unpacking my components
