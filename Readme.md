@@ -1,6 +1,7 @@
 ## Telco Churn Prediction Gradio App
 
-![App Screenshot](Images/Screenshot 2023-08-14 123302.png) 
+![App Screenshot](Images/Screenshot%202023-08-14%20123302.png)
+
 ## Description
 
 This repository contains a machine learning-powered web application built using Gradio that predicts customer churn in the telecommunications industry. The app utilizes a pre-trained machine learning model to analyze input features such as customer tenure, monthly charges, and internet services to predict whether a customer is likely to churn or not.
