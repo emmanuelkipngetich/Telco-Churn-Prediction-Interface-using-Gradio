@@ -13,11 +13,18 @@ The application offers an intuitive and user-friendly interface for predicting c
 1. Clone this repository to your local machine.
 2. Navigate to the project directory.
 
-# Creating a virtual Environment
-python -m venv venv; #To create a venv environment
- venv\Scripts\activate; #To activate the environment
- python -m pip install -q --upgrade pip;#To upgrade the pip 
- python -m pip install -qr requirements.txt #To install the requirements
+ # Setup
+You need Python3 on your system to setup this app. Then you can clone this repo and being at the repo's root :: streamlit sales prediction app> ... follow the steps below:
+* Windows
+```python
+    python -m venv venv; venv\Scripts\activate; python -m pip install -q --upgrade pip; python -m pip install -qr requirements.txt 
+`````` 
+* Linux & MacOs
+```python
+    python3 -m venv venv; source venv/bin/activate; python -m pip install -q --upgrade pip; python -m pip install -qr requirements.txt  
+
+``````
+ 
 
  # To run the Application Script
  python Assets/app.py
