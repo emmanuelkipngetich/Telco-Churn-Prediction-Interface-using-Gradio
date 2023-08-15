@@ -76,7 +76,7 @@
 
 # # Installation
 
-
+from IPython import get_ipython
 #For creating a connection with the remote database
 get_ipython().system('pip install  pyodbc')
 
