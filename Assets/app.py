@@ -41,3 +41,20 @@ model = ml_components_dict['model']
 
 def predict_churn(*args, scaler=scaler, model=model, imputer=imputer, encoder=encoder):
     input_data = pd.DataFrame([args], columns=expected_inputs)
+
+    #Encode the data 
+    num_col = input_data[['SeniorCitizen', 'tenure', 'MonthlyCharges', 'TotalCharges']]
+    cat_col = input_data[['gender', 'Partner', 'Dependents', 'PhoneService', 'MultipleLines',
+       'InternetService', 'OnlineSecurity', 'OnlineBackup', 'DeviceProtection',
+       'TechSupport', 'StreamingTV', 'StreamingMovies', 'Contract',
+       'PaperlessBilling', 'PaymentMethod']]
+    cat_col = cat_col.astype(str)
+    encoded_data = encoder.transform(cat_col)
+    encoded_df = pd.concat([num_col, encoded_data], axis=1)
+
+    # Imputing missing values
+    imputed_df = imputer.transform(encoded_df)
+
+    # Scaling
+   
+    scaled_df = scaler.transform(encoded_df)
