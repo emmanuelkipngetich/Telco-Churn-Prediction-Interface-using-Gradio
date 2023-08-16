@@ -29,7 +29,8 @@ ml_components_dict = load_components_func(fp=ml_core_fp)
 label_encoder = ml_components_dict['label_encoder']
 encoder = ml_components_dict['encoder']
 imputer = ml_components_dict['imputer']
-scaler = ml_components_dict['imbalance']
+scaler = ml_components_dict['scaler']
+balance = ml_components_dict['imbalance']
 model = ml_components_dict['model']
 
 def predict_churn(*args, scaler=scaler, model=model, imputer=imputer, encoder=encoder):
@@ -83,3 +84,15 @@ TechSupport = gr.Radio(choices=['Yes', 'No'], label="Tech Support : Whether the 
 StreamingTV = gr.Radio(choices=['Yes', 'No'], label="Streaming TV : Whether the customer uses streaming TV service.")
 SeniorCitizen = gr.Radio(choices=[0, 1], label='Senior Citizen : Whether the customer is a senior citizen(0 for No and 1 For Yes).')
 StreamingMovies = gr.Radio(choices=['Yes', 'No'], label="Streaming Movies : Whether the customer uses streaming movies service.")
+
+# 
+gr.Interface(inputs=[SeniorCitizen, Tenure, MonthlyCharges, TotalCharges,
+                     Gender, Partner, Dependents, PhoneService, MultipleLines,
+                     InternetService, OnlineSecurity, OnlineBackup, DeviceProtection,
+                     TechSupport, StreamingTV, StreamingMovies, Contract,
+                     PaperlessBilling, PaymentMethod],
+             outputs=gr.Label("Awaiting Submission...."),
+             fn=predict_churn,
+             title=" Teleco Services Customer Churn Prediction",
+             description="This model predicts whether a customer will churn or stay with the telecom service based on various input features",
+             ).launch(inbrowser=True, show_error=True,share = True)
